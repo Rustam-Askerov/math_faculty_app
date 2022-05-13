@@ -217,7 +217,7 @@ class _EventsDetailState extends State<EventsDetail> {
                                         '${widget.event}',
                                         style: TextStyle(
                                             color: Colors.black,
-                                            fontSize: 16,
+                                            fontSize: 18,
                                             fontWeight: FontWeight.w400),
                                       )
                                     : SizedBox(),

@@ -99,7 +99,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             'В ${DateTime.now().year} г. математический факультет ЯрГУ осуществляет приём абитуриентов на очное обучение по направлениям:',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -176,7 +176,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             'Вступительные испытания (результаты ЕГЭ) принимаются по следующим предметам: русский язык, математика, информатика и информационно-коммуникационные технологии. На ${DateTime.now().year} год установлены следующие минимальные баллы по этим предметам: ',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -192,7 +192,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                                   'русский язык: 40,\nматематика: 39,\nинформатика и информационно-коммуникационные технологии: 42.',
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 16,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.w400),
                                 ),
                               ),
@@ -205,7 +205,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             'Проходные баллы 2019 года на бюджетные места: «Компьютерная безопасность» - 230, «Информационная безопасность» - 226, «Математика и компьютерные науки» - 212, «Прикладная математика и информатика» - 219. Анализ динамики проходных баллов за 5 лет вы можете найти в соответствующих статьях: ',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -220,7 +220,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                                 '"Математика и компьютерные науки": как менялись проходные баллы и число бюджетных мест за 5 лет',
                                 style: TextStyle(
                                   color: Color.fromRGBO(26, 91, 165, 1),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                   height: 1.2,
                                 ),
@@ -239,7 +239,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                                 '"Информационная безопасность": о том, как растет популярность и меняется число бюджетных мест.',
                                 style: TextStyle(
                                   color: Color.fromRGBO(26, 91, 165, 1),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                   height: 1.2,
                                 ),
@@ -258,7 +258,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                                 'Изучаем динамику спроса и проходных баллов для специальности "Компьютерная безопасность"',
                                 style: TextStyle(
                                   color: Color.fromRGBO(26, 91, 165, 1),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                   height: 1.2,
                                 ),
@@ -272,7 +272,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             'Наш факультет располагает опытными и высококвалифицированными преподавательскими кадрами, среди которых 15 докторов наук, профессоров и более 20 кандидатов наук, доцентов. На факультете работают 7 кафедр, 3 научно-исследовательских лаборатории. По ключевым показателям (научная деятельность, качество набора абитуриентов и др) наш факультет входит в первую десятку математических факультетов классических вузов России.\n\nБакалавры могут продолжить свое обучение в двухгодичной магистратуре. На факультете работает аспирантура, действуют специализированные советы по защите диссертаций. Под руководством преподавателей студенты факультета занимаются научной работой по актуальной тематике, принимают участие в конкурсах и олимпиадах, получают премии, занимают призовые места. Если Вы занимались математикой или информатикой ранее, то Вы сможете продолжить исследования в интересующей Вас области и во время обучения на факультете.\n\nПрямо сейчас вы можете ознакомиться с рассказом об олимпиадах одной нашей студентки: ',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           Link(
@@ -284,7 +284,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                                 '"Благодаря олимпиаде я уже в марте знала, что в сентябре приду на желанный факультет студенткой"',
                                 style: TextStyle(
                                   color: Color.fromRGBO(26, 91, 165, 1),
-                                  fontSize: 16,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w800,
                                 ),
                               ),
@@ -297,7 +297,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             'Выпускники математического факультета всегда востребованы на рынке труда. Они работают в аналитических отделах самых различных учреждений, уверенно получают работу программиста, преподавателя, находят применение своим знаниям на экономических и управленческих должностях. Наши выпускники успешно работают не только во многих организациях региона, но и далеко за его пределами.',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
@@ -333,7 +333,7 @@ class _ApplicantsScreenState extends State<ApplicantsScreen> {
                             style: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w600),
                           ),
                         ],

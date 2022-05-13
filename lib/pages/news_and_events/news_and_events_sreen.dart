@@ -4,6 +4,7 @@ import 'package:math_faculty_app/data/ui_controller.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/applicants_screen.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/contacts_screen.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/science_screen.dart';
+import 'package:math_faculty_app/pages/drawer_items_screens/students_screen.dart';
 import 'package:math_faculty_app/pages/news_and_events/events_screen.dart';
 import 'package:math_faculty_app/pages/news_and_events/news_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -88,7 +89,9 @@ class _NewsAndEventsScreenState extends State<NewsAndEventsScreen> {
                           height: 16,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(StudentsScreen());
+                          },
                           child: Row(
                             children: [
                               Image(
@@ -180,7 +183,7 @@ class _NewsAndEventsScreenState extends State<NewsAndEventsScreen> {
                           Text(
                             'Версия 0.0.1(Pre-Alpha)',
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(26, 91, 165, 1)),
                           )

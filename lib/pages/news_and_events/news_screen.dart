@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:math_faculty_app/pages/news_and_events/cards/news_card.dart';
+import 'package:url_launcher/link.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({Key? key}) : super(key: key);
@@ -49,29 +50,32 @@ class NewsScreen extends StatelessWidget {
                 ),
                 Padding(
                     padding: EdgeInsets.only(left: 32, top: 8.0),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: const BorderSide(
-                              width: 0,
-                              color: Color.fromRGBO(26, 91, 165, 1),
+                    child: Link(
+                      uri: Uri.parse('https://math.uniyar.ac.ru/pmiplus'),
+                      builder: (context, followLink) => ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                              side: const BorderSide(
+                                width: 0,
+                                color: Color.fromRGBO(26, 91, 165, 1),
+                              ),
                             ),
                           ),
                         ),
+                        child: const Text(
+                          'Больше информации',
+                          style: TextStyle(
+                              color: Color.fromRGBO(26, 91, 165, 1),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        onPressed: followLink,
                       ),
-                      child: const Text(
-                        'Больше информации',
-                        style: TextStyle(
-                            color: Color.fromRGBO(26, 91, 165, 1),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      onPressed: () {},
                     )),
               ],
             ),

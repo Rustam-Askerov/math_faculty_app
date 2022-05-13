@@ -4,19 +4,28 @@ import 'package:math_faculty_app/pages/news_and_events/events_detail.dart';
 import 'package:url_launcher/link.dart';
 
 class ScienceCard extends StatelessWidget {
-  const ScienceCard(
-      {Key? key, required this.title, required this.imagePath, this.url = ''})
-      : super(key: key);
+  const ScienceCard({
+    Key? key,
+    required this.title,
+    required this.imagePath,
+    this.url = '',
+    this.child,
+  }) : super(key: key);
 
   final String title;
   final String imagePath;
   final String url;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return Link(
         uri: Uri.parse(url),
         builder: (builder, followLink) => GestureDetector(
-              onTap: url != '' ? followLink : () async {},
+              onTap: url != ''
+                  ? followLink
+                  : () {
+                      child != null ? Get.to(child) : DoNothingAction();
+                    },
               child: Container(
                 margin: EdgeInsets.all(16).copyWith(bottom: 0),
                 decoration: BoxDecoration(
