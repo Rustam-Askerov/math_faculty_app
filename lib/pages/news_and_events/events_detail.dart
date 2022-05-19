@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:video_player/video_player.dart';
 
 class EventsDetail extends StatefulWidget {
-  EventsDetail(
+  const EventsDetail(
       {Key? key,
       required this.title,
       required this.event,
@@ -25,9 +24,6 @@ class EventsDetail extends StatefulWidget {
 class _EventsDetailState extends State<EventsDetail> {
   final ScrollController controller = ScrollController();
 
-  late VideoPlayerController _video_controller;
-  late Future<void> _initializeVideoPlayerFuture;
-
   @override
   void initState() {
     super.initState();
@@ -44,7 +40,7 @@ class _EventsDetailState extends State<EventsDetail> {
       appBar: AppBar(
         title: Text(
           '${widget.title}',
-          style: TextStyle(
+          style: const TextStyle(
               color: Color.fromRGBO(26, 91, 165, 1),
               fontSize: 20,
               fontWeight: FontWeight.w600),
@@ -52,7 +48,7 @@ class _EventsDetailState extends State<EventsDetail> {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Color.fromRGBO(26, 91, 165, 1),
               ),
@@ -64,7 +60,7 @@ class _EventsDetailState extends State<EventsDetail> {
         ),
         //iconTheme: IconTheme(data: IconThemeData(color: Color.fromRGBO(26, 91, 165, 1)), child: ),
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(8),
           ),
@@ -83,25 +79,25 @@ class _EventsDetailState extends State<EventsDetail> {
             ),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 240,
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.all(16).copyWith(top: 0),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(16).copyWith(top: 0),
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
                             topRight: Radius.circular(16))),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         Text(
                           '${widget.title}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               height: 1.5,
                               color: Color.fromRGBO(26, 91, 165, 1),
                               fontSize: 20,
@@ -112,12 +108,12 @@ class _EventsDetailState extends State<EventsDetail> {
                             controller: controller,
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 12,
                                 ),
                                 Container(
-                                  padding: EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: const BoxDecoration(
                                     color: Color.fromRGBO(40, 137, 245, 1),
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(8),
@@ -132,7 +128,7 @@ class _EventsDetailState extends State<EventsDetail> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Место: ',
                                             style: TextStyle(
                                               color: Colors.white,
@@ -143,7 +139,7 @@ class _EventsDetailState extends State<EventsDetail> {
                                           Flexible(
                                             child: Text(
                                               '${widget.place}',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,
@@ -152,14 +148,14 @@ class _EventsDetailState extends State<EventsDetail> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 6,
                                       ),
                                       Row(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Дата: ',
                                             style: TextStyle(
                                               color: Colors.white,
@@ -170,7 +166,7 @@ class _EventsDetailState extends State<EventsDetail> {
                                           Flexible(
                                             child: Text(
                                               '${widget.date}',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,
@@ -179,14 +175,14 @@ class _EventsDetailState extends State<EventsDetail> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 6,
                                       ),
                                       Row(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Время: ',
                                             style: TextStyle(
                                               color: Colors.white,
@@ -197,7 +193,7 @@ class _EventsDetailState extends State<EventsDetail> {
                                           Flexible(
                                             child: Text(
                                               '${widget.time}',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,
@@ -209,18 +205,18 @@ class _EventsDetailState extends State<EventsDetail> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 16,
                                 ),
                                 widget.event != ''
                                     ? Text(
                                         '${widget.event}',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w400),
                                       )
-                                    : SizedBox(),
+                                    : const SizedBox(),
                               ],
                             ),
                           ),
@@ -234,8 +230,8 @@ class _EventsDetailState extends State<EventsDetail> {
           ),
           Container(
             height: 280,
-            margin: EdgeInsets.only(left: 16, right: 16, top: 10),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(left: 16, right: 16, top: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/default_post_preview.png"),
                     fit: BoxFit.fitWidth)),

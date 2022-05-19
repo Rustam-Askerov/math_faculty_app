@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/soft_screen.dart';
 import 'package:math_faculty_app/pages/news_and_events/news_and_events_sreen.dart';
@@ -18,11 +19,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return GetMaterialApp(
+      defaultTransition: Transition.rightToLeft,
+      transitionDuration: Duration(microseconds: 200),
       getPages: [
         GetPage(name: '/software', page: () => SoftScreen()),
       ],
-      title: 'Flutter Demo',
+      title: 'Матфак Яргу',
       theme: ThemeData(),
       home: const SplashScreen(nextRoute: '/Home'),
       routes: routes,

@@ -24,7 +24,9 @@ class ScienceCard extends StatelessWidget {
               onTap: url != ''
                   ? followLink
                   : () {
-                      child != null ? Get.to(child) : DoNothingAction();
+                      child != null
+                          ? Get.to(child, popGesture: true)
+                          : DoNothingAction();
                     },
               child: Container(
                 margin: EdgeInsets.all(16).copyWith(bottom: 0),
@@ -40,7 +42,7 @@ class ScienceCard extends StatelessWidget {
                       offset: Offset(0, 3), // changes position of shadow
                     ),
                   ],
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(24),
                     bottomRight: Radius.circular(8),
@@ -56,7 +58,7 @@ class ScienceCard extends StatelessWidget {
                         image: DecorationImage(
                             image: AssetImage("${imagePath}"),
                             fit: BoxFit.cover),
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(8),
                           topRight: Radius.circular(24),
                         ),
@@ -66,7 +68,7 @@ class ScienceCard extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
                         '${title}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Color.fromRGBO(26, 91, 165, 1),
                             fontSize: 18,
                             fontWeight: FontWeight.w500),

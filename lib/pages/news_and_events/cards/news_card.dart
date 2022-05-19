@@ -19,23 +19,24 @@ class NewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(NewsDetail(title: title, news: news, videoUrl: videoUrl));
+        Get.to(NewsDetail(title: title, news: news, videoUrl: videoUrl),
+            popGesture: true);
       },
       child: Container(
-        margin: EdgeInsets.all(16).copyWith(bottom: 0),
+        margin: const EdgeInsets.all(16).copyWith(bottom: 0),
         decoration: BoxDecoration(
-          border:
-              Border.all(color: Color.fromRGBO(209, 209, 209, 1), width: 0.5),
+          border: Border.all(
+              color: const Color.fromRGBO(209, 209, 209, 1), width: 0.5),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.25),
               spreadRadius: 2,
               blurRadius: 4,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(8),
             topRight: Radius.circular(24),
             bottomRight: Radius.circular(8),
@@ -46,7 +47,7 @@ class NewsCard extends StatelessWidget {
           children: [
             Container(
               height: 230,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/default_post_preview.png"),
                     fit: BoxFit.cover),
@@ -64,13 +65,13 @@ class NewsCard extends StatelessWidget {
                       const EdgeInsets.only(left: 16.0, top: 16.0, right: 16),
                   child: Text(
                     '${title}',
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromRGBO(26, 91, 165, 1),
                         fontSize: 18,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Row(
@@ -80,7 +81,7 @@ class NewsCard extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 16.0),
                       child: Text(
                         '${date}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Color.fromRGBO(26, 91, 165, 1),
                             fontSize: 18,
                             fontWeight: FontWeight.w400),
@@ -88,7 +89,7 @@ class NewsCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
               ],

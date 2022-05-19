@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/cards/science_card.dart';
 import 'package:math_faculty_app/pages/drawer_items_screens/soft_screen.dart';
-import 'package:math_faculty_app/pages/news_and_events/cards/events_card.dart';
 
 class StudentsScreen extends StatelessWidget {
   const StudentsScreen({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class StudentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Студентам',
           style: TextStyle(
               color: Color.fromRGBO(26, 91, 165, 1),
@@ -21,7 +20,7 @@ class StudentsScreen extends StatelessWidget {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Color.fromRGBO(26, 91, 165, 1),
               ),
@@ -32,7 +31,7 @@ class StudentsScreen extends StatelessWidget {
           },
         ),
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(8),
           ),

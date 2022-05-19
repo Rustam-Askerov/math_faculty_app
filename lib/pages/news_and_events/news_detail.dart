@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/link.dart';
-import 'package:video_player/video_player.dart';
 
-class NewsDetail extends StatefulWidget {
+class NewsDetail extends StatelessWidget {
   NewsDetail(
       {Key? key, required this.title, required this.news, this.videoUrl = ''})
       : super(key: key);
@@ -12,37 +11,15 @@ class NewsDetail extends StatefulWidget {
   final String news;
   final String videoUrl;
 
-  @override
-  State<NewsDetail> createState() => _NewsDetailState();
-}
-
-class _NewsDetailState extends State<NewsDetail> {
   final ScrollController controller = ScrollController();
-
-  late VideoPlayerController _video_controller;
-  late Future<void> _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // Create and store the VideoPlayerController. The VideoPlayerController
-    // offers several different constructors to play videos from assets, files,
-    // or the internet.
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${widget.title}',
-          style: TextStyle(
+          '${title}',
+          style: const TextStyle(
               color: Color.fromRGBO(26, 91, 165, 1),
               fontSize: 20,
               fontWeight: FontWeight.w600),
@@ -50,7 +27,7 @@ class _NewsDetailState extends State<NewsDetail> {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Color.fromRGBO(26, 91, 165, 1),
               ),
@@ -62,7 +39,7 @@ class _NewsDetailState extends State<NewsDetail> {
         ),
         //iconTheme: IconTheme(data: IconThemeData(color: Color.fromRGBO(26, 91, 165, 1)), child: ),
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(8),
           ),
@@ -82,31 +59,31 @@ class _NewsDetailState extends State<NewsDetail> {
             width: Get.size.width,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 240,
                 ),
                 Expanded(
                   child: Container(
                     width: Get.size.width,
-                    padding: EdgeInsets.all(16).copyWith(top: 0),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(16).copyWith(top: 0),
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
                             topRight: Radius.circular(16))),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         Text(
-                          '${widget.title}',
-                          style: TextStyle(
+                          '${title}',
+                          style: const TextStyle(
                               color: Color.fromRGBO(26, 91, 165, 1),
                               fontSize: 20,
                               fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         Expanded(
@@ -114,22 +91,22 @@ class _NewsDetailState extends State<NewsDetail> {
                             controller: controller,
                             child: Column(
                               children: [
-                                widget.news != ''
+                                news != ''
                                     ? Text(
-                                        '${widget.news}',
-                                        style: TextStyle(
+                                        '${news}',
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w400),
                                       )
-                                    : SizedBox(),
-                                widget.videoUrl != ''
+                                    : const SizedBox(),
+                                videoUrl != ''
                                     ? Link(
-                                        uri: Uri.parse(widget.videoUrl),
+                                        uri: Uri.parse(videoUrl),
                                         builder: (context, followLink) =>
                                             GestureDetector(
                                           onTap: followLink,
-                                          child: Text(
+                                          child: const Text(
                                             'Посмотреть видео',
                                             style: TextStyle(
                                               color: Color.fromRGBO(
@@ -141,7 +118,7 @@ class _NewsDetailState extends State<NewsDetail> {
                                           ),
                                         ),
                                       )
-                                    : SizedBox(),
+                                    : const SizedBox(),
                               ],
                             ),
                           ),
@@ -155,39 +132,14 @@ class _NewsDetailState extends State<NewsDetail> {
           ),
           Container(
             height: 280,
-            margin: EdgeInsets.only(left: 16, right: 16, top: 10),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(left: 16, right: 16, top: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/default_post_preview.png"),
                     fit: BoxFit.fitWidth)),
           ),
         ],
       ),
-      // floatingActionButton: widget.videoUrl != ''
-      //     ? FloatingActionButton(
-      //         onPressed: () {
-      //           // Wrap the play or pause in a call to `setState`. This ensures the
-      //           // correct icon is shown.
-      //           setState(() {
-      //             // If the video is playing, pause it.
-      //             if (_video_controller.value.isPlaying) {
-      //               _video_controller.pause();
-      //             } else {
-      //               // If the video is paused, play it.
-      //               _video_controller.play();
-      //             }
-      //           });
-      //         },
-      //         // Display the correct icon depending on the state of the player.
-      //         child: Icon(
-      //           _video_controller.value.isPlaying
-      //               ? Icons.pause
-      //               : Icons.play_arrow,
-      //         ),
-      //       )
-      //     : FloatingActionButton(
-      //         onPressed: () {},
-      //       ),
     );
   }
 }

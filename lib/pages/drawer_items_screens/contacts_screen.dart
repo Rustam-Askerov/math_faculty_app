@@ -1,34 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/link.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
 
-class ContactsScreen extends StatefulWidget {
-  ContactsScreen({
+class ContactsScreen extends StatelessWidget {
+  const ContactsScreen({
     Key? key,
   }) : super(key: key);
-
-  @override
-  State<ContactsScreen> createState() => _ContactsScreenState();
-}
-
-class _ContactsScreenState extends State<ContactsScreen> {
-  final ScrollController controller = ScrollController();
-
-  late VideoPlayerController _video_controller;
-  late Future<void> _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Контакты',
           style: TextStyle(
               color: Color.fromRGBO(26, 91, 165, 1),
@@ -38,7 +21,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Color.fromRGBO(26, 91, 165, 1),
               ),
@@ -49,7 +32,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
           },
         ),
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(8),
           ),
@@ -68,13 +51,13 @@ class _ContactsScreenState extends State<ContactsScreen> {
             ),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 240,
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.all(16).copyWith(top: 0),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(16).copyWith(top: 0),
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
@@ -82,10 +65,10 @@ class _ContactsScreenState extends State<ContactsScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 32,
                         ),
-                        SelectableText(
+                        const SelectableText(
                           'Адрес факультета :',
                           style: TextStyle(
                               color: Color.fromRGBO(26, 91, 165, 1),
@@ -93,7 +76,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                               fontWeight: FontWeight.w400,
                               height: 1.5),
                         ),
-                        SelectableText(
+                        const SelectableText(
                           '150008, г. Ярославль, ул. Союзная, 144',
                           style: TextStyle(
                               color: Colors.black,
@@ -101,7 +84,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                               fontWeight: FontWeight.w400,
                               height: 1.5),
                         ),
-                        SelectableText(
+                        const SelectableText(
                           'Телефоны :',
                           style: TextStyle(
                               color: Color.fromRGBO(26, 91, 165, 1),
@@ -112,7 +95,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                          children: const [
                             SelectableText(
                               'Телефон деканата : ',
                               style: TextStyle(
@@ -131,7 +114,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                             ),
                           ],
                         ),
-                        SelectableText(
+                        const SelectableText(
                           'Телефон для справок по вопросам',
                           style: TextStyle(
                               color: Color.fromRGBO(26, 91, 165, 1),
@@ -142,7 +125,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                          children: const [
                             SelectableText(
                               'поступления : ',
                               style: TextStyle(
@@ -164,7 +147,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                          children: const [
                             SelectableText(
                               'WhatsApp : ',
                               style: TextStyle(
@@ -188,7 +171,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                          children: const [
                             SelectableText(
                               'E-mail : ',
                               style: TextStyle(
@@ -209,7 +192,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                             ),
                           ],
                         ),
-                        SelectableText(
+                        const SelectableText(
                           'E-mail по вопросам поступления : ',
                           style: TextStyle(
                             color: Color.fromRGBO(26, 91, 165, 1),
@@ -218,7 +201,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                             height: 1.5,
                           ),
                         ),
-                        SelectableText(
+                        const SelectableText(
                           'kaphedra@mail.ru',
                           style: TextStyle(
                             color: Colors.black,
@@ -231,7 +214,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                           uri: Uri.parse('https://vk.com/math_yargu'),
                           builder: (context, followLink) => GestureDetector(
                             onTap: followLink,
-                            child: Text(
+                            child: const Text(
                               'Группа для абитуриентов ВКонтакте',
                               style: TextStyle(
                                 color: Color.fromRGBO(26, 91, 165, 1),
@@ -251,8 +234,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
           ),
           Container(
             height: 280,
-            margin: EdgeInsets.only(left: 16, right: 16, top: 10),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(left: 16, right: 16, top: 10),
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/images/logo.png"),
                     fit: BoxFit.fitWidth)),

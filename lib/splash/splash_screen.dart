@@ -19,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(color: Color.fromRGBO(29, 47, 93, 1)),
