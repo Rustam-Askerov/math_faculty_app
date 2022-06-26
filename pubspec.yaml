@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get:
   url_launcher:
+  markdown_editable_textinput: ^2.0.2
 
 dev_dependencies:
   flutter_test:

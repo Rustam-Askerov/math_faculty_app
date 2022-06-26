@@ -267,7 +267,7 @@ class _NewsAndEventsScreenState extends State<NewsAndEventsScreen> {
           onPageChanged: getXcontroller.updateNewsEventsPageIndex,
           children: <Widget>[
             NewsScreen(),
-            const EventsScreen(),
+            EventsScreen(),
           ],
         ),
       ),

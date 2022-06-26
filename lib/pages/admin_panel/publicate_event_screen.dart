@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:markdown_editable_textinput/format_markdown.dart';
+import 'package:markdown_editable_textinput/markdown_text_input.dart';
 import 'package:math_faculty_app/data/ui_controller.dart';
 import 'package:url_launcher/link.dart';
 
@@ -159,24 +161,33 @@ class _PublicateEventsScreenState extends State<PublicateEventsScreen> {
                       fontWeight: FontWeight.w400),
                 ),
               ),
-              SizedBox(height: 16,),
-              TextField(
-                controller: _events_text_controller,
-                keyboardType: TextInputType.multiline,
-                maxLines: null,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                        color: Color.fromRGBO(26, 91, 165, 1), width: 2),
-                  ),
-                  labelText: 'Содержание события...',
-                  labelStyle: TextStyle(
-                      color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400),
-                ),
+              SizedBox(
+                height: 16,
               ),
+              MarkdownTextInput(
+                (String value) => {},
+                '',
+                label: 'Содержание события...',
+                actions: MarkdownType.values,
+                controller: _events_text_controller,
+              ),
+              // TextField(
+              //   controller: _events_text_controller,
+              //   keyboardType: TextInputType.multiline,
+              //   maxLines: null,
+              //   decoration: InputDecoration(
+              //     enabledBorder: OutlineInputBorder(
+              //       borderRadius: BorderRadius.circular(8),
+              //       borderSide: BorderSide(
+              //           color: Color.fromRGBO(26, 91, 165, 1), width: 2),
+              //     ),
+              //     labelText: 'Содержание события...',
+              //     labelStyle: TextStyle(
+              //         color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
+              //         fontSize: 16,
+              //         fontWeight: FontWeight.w400),
+              //   ),
+              // ),
               SizedBox(
                 height: 16,
               ),
@@ -202,7 +213,7 @@ class _PublicateEventsScreenState extends State<PublicateEventsScreen> {
                     _url_controller.clear();
                     _events_text_controller.clear();
                     final snackBar = SnackBar(
-                      content: const Text('Новость успешно опубликована'),
+                      content: const Text('Событие успешно опубликовано'),
                       action: SnackBarAction(
                         label: 'ОК',
                         onPressed: () {

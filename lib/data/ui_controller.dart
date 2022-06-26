@@ -72,9 +72,10 @@ class AppDataController extends GetxController {
     update();
   }
 
-  void addEvents(String title, String date, String time,String place, String eventsText, String publicateDate) {
+  void addEvents(String title, String date, String time, String place,
+      String eventsText, String publicateDate) {
     events.insert(
-      1,
+      0,
       EventsCard(
         publicateDate: publicateDate,
         event: eventsText,
@@ -86,7 +87,7 @@ class AppDataController extends GetxController {
     );
     update();
   }
-  
+
   void updateNewsEventsPageIndex(int value) {
     news_and_events_page_index.value = value;
     update();
