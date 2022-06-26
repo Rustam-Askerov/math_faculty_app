@@ -3,22 +3,24 @@ import 'package:get/get.dart';
 import 'package:math_faculty_app/data/ui_controller.dart';
 import 'package:url_launcher/link.dart';
 
-class PublicateNewsScreen extends StatefulWidget {
-  PublicateNewsScreen({
+class PublicateEventsScreen extends StatefulWidget {
+  PublicateEventsScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PublicateNewsScreen> createState() => _PublicateNewsScreenState();
+  State<PublicateEventsScreen> createState() => _PublicateEventsScreenState();
 }
 
-class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
+class _PublicateEventsScreenState extends State<PublicateEventsScreen> {
   TextEditingController _title_controller = TextEditingController();
-
   TextEditingController _url_controller = TextEditingController();
-
-  TextEditingController _news_text_controller = TextEditingController();
+  TextEditingController _events_text_controller = TextEditingController();
   TextEditingController _date_controller = TextEditingController();
+  TextEditingController _time_controller = TextEditingController();
+  TextEditingController _place_controller = TextEditingController();
+  TextEditingController _publicate_date_controller = TextEditingController();
+
   ScrollController _scroll_controller = ScrollController();
 
   var controller = Get.put(AppDataController());
@@ -28,7 +30,7 @@ class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Публикация новости',
+          'Публикация события',
           style: TextStyle(
               color: Color.fromRGBO(26, 91, 165, 1),
               fontSize: 20,
@@ -107,14 +109,14 @@ class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
                 height: 16,
               ),
               TextField(
-                controller: _url_controller,
+                controller: _time_controller,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide(
                         color: Color.fromRGBO(26, 91, 165, 1), width: 2),
                   ),
-                  labelText: 'Ccылка на видео-ролик',
+                  labelText: 'Время',
                   labelStyle: TextStyle(
                       color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
                       fontSize: 16,
@@ -125,7 +127,41 @@ class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
                 height: 16,
               ),
               TextField(
-                controller: _news_text_controller,
+                controller: _place_controller,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                        color: Color.fromRGBO(26, 91, 165, 1), width: 2),
+                  ),
+                  labelText: 'Место',
+                  labelStyle: TextStyle(
+                      color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              TextField(
+                controller: _place_controller,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                        color: Color.fromRGBO(26, 91, 165, 1), width: 2),
+                  ),
+                  labelText: 'Дата публикациия события',
+                  labelStyle: TextStyle(
+                      color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+              SizedBox(height: 16,),
+              TextField(
+                controller: _events_text_controller,
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
                 decoration: InputDecoration(
@@ -134,7 +170,7 @@ class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
                     borderSide: BorderSide(
                         color: Color.fromRGBO(26, 91, 165, 1), width: 2),
                   ),
-                  labelText: 'Содержание новости...',
+                  labelText: 'Содержание события...',
                   labelStyle: TextStyle(
                       color: Color.fromRGBO(26, 91, 165, 1).withOpacity(0.7),
                       fontSize: 16,
@@ -154,15 +190,17 @@ class _PublicateNewsScreenState extends State<PublicateNewsScreen> {
                     ),
                   ),
                   onPressed: () {
-                    controller.addNews(
+                    controller.addEvents(
                         _title_controller.text.toString(),
                         _date_controller.text.toString(),
-                        _url_controller.text.toString(),
-                        _news_text_controller.text.toString());
+                        _time_controller.text.toString(),
+                        _place_controller.text.toString(),
+                        _events_text_controller.text.toString(),
+                        _publicate_date_controller.text.toString());
                     _title_controller.clear();
                     _date_controller.clear();
                     _url_controller.clear();
-                    _news_text_controller.clear();
+                    _events_text_controller.clear();
                     final snackBar = SnackBar(
                       content: const Text('Новость успешно опубликована'),
                       action: SnackBarAction(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:math_faculty_app/pages/admin_panel/publicate_event_screen.dart';
 import 'package:math_faculty_app/pages/admin_panel/publicate_news_screen.dart';
-import 'package:url_launcher/link.dart';
 
 class AdminMenu extends StatelessWidget {
   AdminMenu({
@@ -110,7 +110,9 @@ class AdminMenu extends StatelessWidget {
                           color: Color.fromRGBO(26, 91, 165, 1),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(PublicateEventsScreen());
+                          },
                           child: Row(
                             children: const [
                               Icon(
